@@ -13,10 +13,16 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  
+  var model = MainModel()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    if let modelable = window?.rootViewController as? Modelable {
+      modelable.mainModel = model
+    }
+    
     return true
   }
 

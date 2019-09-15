@@ -1,5 +1,5 @@
 //
-//  LaunchScreenViewController.swift
+//  IntroViewController.swift
 //  MarvelHunt
 //
 //  Created by Dmytro Pylypenko on 9/15/19.
@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+class IntroViewController: UIViewController {
+  var didComplete: (() -> Void)?
+  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var label: UILabel! {
     didSet {
@@ -43,10 +45,19 @@ class LaunchScreenViewController: UIViewController {
       fromValue: nil, toValue: view.bounds.width * 2,
       timingFunction: .init(name: .easeIn)))
     
-    label.layer.add(CABasicAnimation(
-      keyPath: "position.x",
-      delay: 3, duration: 0.3,
-      fromValue: nil, toValue: -view.bounds.width * 2,
-      timingFunction: .init(name: .easeIn)))
+    label.layer.add(
+      CABasicAnimation(
+        keyPath: "position.x",
+        delay: 3, duration: 0.3,
+        fromValue: nil, toValue: -view.bounds.width * 2,
+        timingFunction: .init(name: .easeIn)),
+      delegate: self
+    )
+  }
+}
+
+extension IntroViewController: CAAnimationDelegate {
+  func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    didComplete?()
   }
 }
