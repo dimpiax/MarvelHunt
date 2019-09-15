@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, Modelable {
   var mainModel: MainModel!
+  
+  private lazy var _viewModel = ViewControllerViewModel(kvStorage: mainModel.kvStorage)
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -20,9 +22,8 @@ class ViewController: UIViewController, Modelable {
 
 private extension ViewController {
   func showScreen() {
-    let isIntroPassed = mainModel.kvStorage[.isIntroPassed, Bool.self] == true
-    
-    if isIntroPassed {
+    mainModel.kvStorage.clear()
+    if _viewModel.isIntroPassed {
       // show navigation
       
     }
@@ -33,9 +34,8 @@ private extension ViewController {
         return
       }
       
-      vc.didComplete = {[unowned self] in
-        vc.remove()
-        self.mainModel.kvStorage[.isIntroPassed] = true
+      vc.didRemove = {[unowned self] in
+        self._viewModel.setIntroPassed()
       }
       add(viewController: vc)
     }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class IntroViewController: UIViewController {
-  var didComplete: (() -> Void)?
+  var didRemove: (() -> Void)?
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var label: UILabel! {
@@ -51,13 +51,19 @@ class IntroViewController: UIViewController {
         delay: 3, duration: 0.3,
         fromValue: nil, toValue: -view.bounds.width * 2,
         timingFunction: .init(name: .easeIn)),
-      delegate: self
-    )
+      delegate: self)
+  }
+  
+  override func removeFromParent() {
+    super.removeFromParent()
+    
+    didRemove = nil
   }
 }
 
 extension IntroViewController: CAAnimationDelegate {
   func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    didComplete?()
+    remove()
+    didRemove?()
   }
 }
