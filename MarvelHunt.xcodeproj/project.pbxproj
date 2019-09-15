@@ -13,8 +13,15 @@
 		F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F050576A232E49E80062A1BC /* MarvelHunt.xcdatamodeld */; };
 		F050576E232E49EB0062A1BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F050576D232E49EB0062A1BC /* Assets.xcassets */; };
 		F0505771232E49EB0062A1BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F050576F232E49EB0062A1BC /* LaunchScreen.storyboard */; };
-		F050577C232E49EB0062A1BC /* MarvelHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050577B232E49EB0062A1BC /* MarvelHuntTests.swift */; };
 		F0505787232E49EB0062A1BC /* MarvelHuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505786232E49EB0062A1BC /* MarvelHuntUITests.swift */; };
+		F0505796232E5A4F0062A1BC /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505795232E5A4F0062A1BC /* LaunchScreenViewController.swift */; };
+		F0505798232E61A80062A1BC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0505797232E61A80062A1BC /* Colors.xcassets */; };
+		F0CABBE4232ED2C3002E704B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE3232ED2C3002E704B /* UIColor+.swift */; };
+		F0CABBE6232ED332002E704B /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE5232ED332002E704B /* UIColorTests.swift */; };
+		F0CABBE7232ED39D002E704B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE3232ED2C3002E704B /* UIColor+.swift */; };
+		F0CABBEA232EEAEB002E704B /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE9232EEAEB002E704B /* CALayer+.swift */; };
+		F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBEB232EEB19002E704B /* CABasicAnimation+.swift */; };
+		F0CABBEE232EEB72002E704B /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBED232EEB72002E704B /* UIBezierPath+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +51,17 @@
 		F0505770232E49EB0062A1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0505772232E49EB0062A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0505777232E49EB0062A1BC /* MarvelHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F050577B232E49EB0062A1BC /* MarvelHuntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHuntTests.swift; sourceTree = "<group>"; };
 		F050577D232E49EB0062A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0505782232E49EB0062A1BC /* MarvelHuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHuntUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0505786232E49EB0062A1BC /* MarvelHuntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHuntUITests.swift; sourceTree = "<group>"; };
 		F0505788232E49EB0062A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0505795232E5A4F0062A1BC /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		F0505797232E61A80062A1BC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F0CABBE3232ED2C3002E704B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		F0CABBE5232ED332002E704B /* UIColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
+		F0CABBE9232EEAEB002E704B /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		F0CABBEB232EEB19002E704B /* CABasicAnimation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+.swift"; sourceTree = "<group>"; };
+		F0CABBED232EEB72002E704B /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F034079B232ED29700A58D04 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0CABBE3232ED2C3002E704B /* UIColor+.swift */,
+				F0CABBE9232EEAEB002E704B /* CALayer+.swift */,
+				F0CABBEB232EEB19002E704B /* CABasicAnimation+.swift */,
+				F0CABBED232EEB72002E704B /* UIBezierPath+.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		F0505757232E49E80062A1BC = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +123,12 @@
 		F0505762232E49E80062A1BC /* MarvelHunt */ = {
 			isa = PBXGroup;
 			children = (
+				F0CABBE8232ED42D002E704B /* storyboards */,
+				F0505794232E5A3D0062A1BC /* view controllers */,
+				F034079B232ED29700A58D04 /* extensions */,
 				F0505763232E49E80062A1BC /* AppDelegate.swift */,
-				F0505765232E49E80062A1BC /* ViewController.swift */,
-				F0505767232E49E80062A1BC /* Main.storyboard */,
 				F050576D232E49EB0062A1BC /* Assets.xcassets */,
-				F050576F232E49EB0062A1BC /* LaunchScreen.storyboard */,
+				F0505797232E61A80062A1BC /* Colors.xcassets */,
 				F0505772232E49EB0062A1BC /* Info.plist */,
 				F050576A232E49E80062A1BC /* MarvelHunt.xcdatamodeld */,
 			);
@@ -113,7 +138,7 @@
 		F050577A232E49EB0062A1BC /* MarvelHuntTests */ = {
 			isa = PBXGroup;
 			children = (
-				F050577B232E49EB0062A1BC /* MarvelHuntTests.swift */,
+				F0CABBE5232ED332002E704B /* UIColorTests.swift */,
 				F050577D232E49EB0062A1BC /* Info.plist */,
 			);
 			path = MarvelHuntTests;
@@ -126,6 +151,24 @@
 				F0505788232E49EB0062A1BC /* Info.plist */,
 			);
 			path = MarvelHuntUITests;
+			sourceTree = "<group>";
+		};
+		F0505794232E5A3D0062A1BC /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0505795232E5A4F0062A1BC /* LaunchScreenViewController.swift */,
+				F0505765232E49E80062A1BC /* ViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		F0CABBE8232ED42D002E704B /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F050576F232E49EB0062A1BC /* LaunchScreen.storyboard */,
+				F0505767232E49E80062A1BC /* Main.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0505771232E49EB0062A1BC /* LaunchScreen.storyboard in Resources */,
+				F0505798232E61A80062A1BC /* Colors.xcassets in Resources */,
 				F050576E232E49EB0062A1BC /* Assets.xcassets in Resources */,
 				F0505769232E49E80062A1BC /* Main.storyboard in Resources */,
 			);
@@ -260,8 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0505766232E49E80062A1BC /* ViewController.swift in Sources */,
+				F0CABBEA232EEAEB002E704B /* CALayer+.swift in Sources */,
+				F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */,
 				F0505764232E49E80062A1BC /* AppDelegate.swift in Sources */,
+				F0505796232E5A4F0062A1BC /* LaunchScreenViewController.swift in Sources */,
+				F0CABBEE232EEB72002E704B /* UIBezierPath+.swift in Sources */,
 				F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */,
+				F0CABBE4232ED2C3002E704B /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F050577C232E49EB0062A1BC /* MarvelHuntTests.swift in Sources */,
+				F0CABBE6232ED332002E704B /* UIColorTests.swift in Sources */,
+				F0CABBE7232ED39D002E704B /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25NPLW7WLQ;
 				INFOPLIST_FILE = MarvelHunt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25NPLW7WLQ;
 				INFOPLIST_FILE = MarvelHunt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
