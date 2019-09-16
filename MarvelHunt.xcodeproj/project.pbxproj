@@ -12,6 +12,7 @@
 		F000D0B523302B6E003E9CA8 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */; };
 		F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B623304886003E9CA8 /* ComicsViewModel.swift */; };
 		F000D0B9233048C6003E9CA8 /* UIActivityViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */; };
+		F000D0BC23304BEA003E9CA8 /* CAShapeLayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */; };
 		F0505764232E49E80062A1BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505763232E49E80062A1BC /* AppDelegate.swift */; };
 		F0505769232E49E80062A1BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0505767232E49E80062A1BC /* Main.storyboard */; };
 		F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F050576A232E49E80062A1BC /* MarvelHunt.xcdatamodeld */; };
@@ -69,6 +70,7 @@
 		F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		F000D0B623304886003E9CA8 /* ComicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewModel.swift; sourceTree = "<group>"; };
 		F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+.swift"; sourceTree = "<group>"; };
+		F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+.swift"; sourceTree = "<group>"; };
 		F0505760232E49E80062A1BC /* MarvelHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0505763232E49E80062A1BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0505768232E49E80062A1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				F0BC107B232F8E1500382455 /* UICollectionView+.swift */,
 				F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */,
 				F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */,
+				F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				F0BC107C232F8E1500382455 /* UICollectionView+.swift in Sources */,
 				F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */,
 				F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */,
+				F000D0BC23304BEA003E9CA8 /* CAShapeLayer+.swift in Sources */,
 				F000D0B523302B6E003E9CA8 /* UINavigationController+.swift in Sources */,
 				F0BC1073232F046A00382455 /* MainViewController.swift in Sources */,
 				F0BC1078232F0D1500382455 /* MainNavigationViewController.swift in Sources */,

@@ -6,9 +6,7 @@
 //  Copyright © 2019 FeeTime. All rights reserved.
 //
 
-import class QuartzCore.CALayer
-import class QuartzCore.CAPropertyAnimation
-import protocol QuartzCore.CAAnimationDelegate
+import UIKit
 
 extension CALayer {
   func add(_ value: CAPropertyAnimation, delegate: CAAnimationDelegate) {
@@ -18,5 +16,19 @@ extension CALayer {
   
   func add(_ value: CAPropertyAnimation) {
     add(value, forKey: value.keyPath)
+  }
+}
+
+extension CALayer {
+  func drawShadow(path: UIBezierPath? = nil, color: UIColor = .black, offset: CGSize = .zero, blurRadius: CGFloat = 2, opacity: Float = 1) {
+    setShadow(path: path, color: color, offset: offset, blurRadius: blurRadius, opacity: opacity)
+  }
+  
+  private func setShadow(path: UIBezierPath?, color: UIColor? = .black, offset: CGSize = .zero, blurRadius: CGFloat = 2, opacity: Float = 1) {
+    shadowPath = path?.cgPath
+    shadowColor = color?.cgColor
+    shadowOffset = offset
+    shadowRadius = blurRadius
+    shadowOpacity = opacity
   }
 }

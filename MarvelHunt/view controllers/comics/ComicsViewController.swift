@@ -53,7 +53,7 @@ class ComicsViewController: UIViewController, Modelable {
   }
   
   @IBAction func didTapButton() {
-    print("register at current location the spot")
+    print("TODO: register at current location the spot")
   }
   
   @objc private func didTapActionButton(_ value: UIBarButtonItem) {
