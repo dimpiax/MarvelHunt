@@ -13,4 +13,8 @@ extension UIColor {
   class var brand: UIColor {
     return UIColor(named: "Brand")!
   }
+  
+  class var light: UIColor {
+    return UIColor(named: "Light")!
+  }
 }

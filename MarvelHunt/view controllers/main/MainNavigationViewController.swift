@@ -12,14 +12,10 @@ import UIKit
 class MainNavigationViewController: UINavigationController, Modelable {
   var mainModel: MainModel!
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    guard let vc = topViewController as? Modelable else {
-      return
-    }
-    
-    vc.mainModel = mainModel
+    (topViewController as? Modelable)?.mainModel = mainModel
   }
 }
 

@@ -12,5 +12,6 @@ import XCTest
 class UIColorTests: XCTestCase {
   func testConsistency() {
     _ = UIColor.brand
+    _ = UIColor.light
   }
 }

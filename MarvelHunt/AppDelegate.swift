@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var model = MainModel()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.blue
     
     if let modelable = window?.rootViewController as? Modelable {
       modelable.mainModel = model

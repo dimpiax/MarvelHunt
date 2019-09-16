@@ -35,3 +35,9 @@ extension UIViewController {
     present(viewControllerToPresent, animated: flag, completion: completion)
   }
 }
+
+extension UIViewController {
+  func performSegue(_ value: SegueIdentifier, sender: Any? = nil) {
+    performSegue(withIdentifier: value.rawValue, sender: sender)
+  }
+}
