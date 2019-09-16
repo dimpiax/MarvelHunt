@@ -10,6 +10,8 @@
 		F000D0B0232FFFF9003E9CA8 /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0AF232FFFF9003E9CA8 /* ComicsViewController.swift */; };
 		F000D0B323300C62003E9CA8 /* ComicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B223300C62003E9CA8 /* ComicsModel.swift */; };
 		F000D0B523302B6E003E9CA8 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */; };
+		F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B623304886003E9CA8 /* ComicsViewModel.swift */; };
+		F000D0B9233048C6003E9CA8 /* UIActivityViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */; };
 		F0505764232E49E80062A1BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505763232E49E80062A1BC /* AppDelegate.swift */; };
 		F0505769232E49E80062A1BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0505767232E49E80062A1BC /* Main.storyboard */; };
 		F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F050576A232E49E80062A1BC /* MarvelHunt.xcdatamodeld */; };
@@ -65,6 +67,8 @@
 		F000D0AF232FFFF9003E9CA8 /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		F000D0B223300C62003E9CA8 /* ComicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModel.swift; sourceTree = "<group>"; };
 		F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		F000D0B623304886003E9CA8 /* ComicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewModel.swift; sourceTree = "<group>"; };
+		F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+.swift"; sourceTree = "<group>"; };
 		F0505760232E49E80062A1BC /* MarvelHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0505763232E49E80062A1BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0505768232E49E80062A1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				F0BC1079232F8C4900382455 /* UIEdgeInsets+.swift */,
 				F0BC107B232F8E1500382455 /* UICollectionView+.swift */,
 				F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */,
+				F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				F0BC1087232F9C6E00382455 /* ComicsCollectionViewModel.swift */,
+				F000D0B623304886003E9CA8 /* ComicsViewModel.swift */,
 			);
 			path = "view models";
 			sourceTree = "<group>";
@@ -473,12 +479,14 @@
 				F0BC1085232F8E8F00382455 /* ComicsData.swift in Sources */,
 				F0CABBF4232EEF88002E704B /* KeyValueStorage.swift in Sources */,
 				F0BC107A232F8C4900382455 /* UIEdgeInsets+.swift in Sources */,
+				F000D0B9233048C6003E9CA8 /* UIActivityViewController+.swift in Sources */,
 				F0CABBEA232EEAEB002E704B /* CALayer+.swift in Sources */,
 				F06747A0232FFBED00E0BDC7 /* SegueIdentifier.swift in Sources */,
 				F0BC1082232F8E5B00382455 /* Identifable.swift in Sources */,
 				F0CABBFD232EF7AE002E704B /* VCFactory.swift in Sources */,
 				F0BC107C232F8E1500382455 /* UICollectionView+.swift in Sources */,
 				F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */,
+				F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */,
 				F000D0B523302B6E003E9CA8 /* UINavigationController+.swift in Sources */,
 				F0BC1073232F046A00382455 /* MainViewController.swift in Sources */,
 				F0BC1078232F0D1500382455 /* MainNavigationViewController.swift in Sources */,

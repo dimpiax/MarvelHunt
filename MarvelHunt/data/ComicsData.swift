@@ -16,13 +16,16 @@ struct ComicsData {
   let variantDescription: String
   let desc: String
   let thumbnail: URL
+  let issue: URL?
   
   static func dummy() -> ComicsData {
     return .init(id: 1689,
                  title: "Official Handbook of the Marvel Universe (2004) #10 (MARVEL KNIGHTS)",
                  variantDescription: "MARVEL KNIGHTS",
                  desc: "On the mean streets of the Marvel Universe, the kid gloves come off. Guardian devils, vengeance-seeking vigilantes and enigmatic assassins stalk the city's dark underbelly _ and the urban action unfolds with gritty intensity. The newest entry in Marvel's best-selling Handbook series, OHOTMUMK04 includes in-depth bios on a host of the House's edgiest icons - from Black Panther to Shang-Chi!",
-                 thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9.jpg")!)
+                 thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9.jpg")!,
+                 issue: URL(string: "http://marvel.com/comics/issue/1689/official_handbook_of_the_marvel_universe_2004_10_marvel_knights/marvel_knights?utm_campaign=apiRef&utm_source=fe72df79060725908ac5e758d88340cd")!
+    )
   }
 }
 

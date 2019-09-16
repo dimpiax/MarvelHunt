@@ -34,6 +34,10 @@ extension UIViewController {
     
     present(viewControllerToPresent, animated: flag, completion: completion)
   }
+  
+  func present(_ viewControllerToPresent: UIViewController) {
+    present(viewControllerToPresent, animated: true)
+  }
 }
 
 extension UIViewController {
