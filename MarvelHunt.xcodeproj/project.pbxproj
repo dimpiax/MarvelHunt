@@ -17,6 +17,8 @@
 		F0505798232E61A80062A1BC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0505797232E61A80062A1BC /* Colors.xcassets */; };
 		F0BC106D232F042200382455 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC106C232F042200382455 /* ViewControllerViewModel.swift */; };
 		F0BC1073232F046A00382455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC1072232F046900382455 /* ViewController.swift */; };
+		F0BC1076232F095700382455 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC1075232F095700382455 /* MainViewController.swift */; };
+		F0BC1078232F0D1500382455 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC1077232F0D1500382455 /* MainNavigationViewController.swift */; };
 		F0CABBE4232ED2C3002E704B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE3232ED2C3002E704B /* UIColor+.swift */; };
 		F0CABBE6232ED332002E704B /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE5232ED332002E704B /* UIColorTests.swift */; };
 		F0CABBEA232EEAEB002E704B /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABBE9232EEAEB002E704B /* CALayer+.swift */; };
@@ -66,6 +68,8 @@
 		F0505797232E61A80062A1BC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F0BC106C232F042200382455 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 		F0BC1072232F046900382455 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0BC1075232F095700382455 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0BC1077232F0D1500382455 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		F0CABBE3232ED2C3002E704B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		F0CABBE5232ED332002E704B /* UIColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		F0CABBE9232EEAEB002E704B /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				F0BC1071232F044400382455 /* view models */,
 				F0BC106E232F042700382455 /* intro */,
+				F0BC1074232F093800382455 /* main */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -201,6 +206,15 @@
 				F0BC106C232F042200382455 /* ViewControllerViewModel.swift */,
 			);
 			path = "view models";
+			sourceTree = "<group>";
+		};
+		F0BC1074232F093800382455 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F0BC1075232F095700382455 /* MainViewController.swift */,
+				F0BC1077232F0D1500382455 /* MainNavigationViewController.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 		F0CABBE8232ED42D002E704B /* storyboards */ = {
@@ -383,10 +397,12 @@
 				F0CABBFD232EF7AE002E704B /* VCFactory.swift in Sources */,
 				F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */,
 				F0BC1073232F046A00382455 /* ViewController.swift in Sources */,
+				F0BC1078232F0D1500382455 /* MainNavigationViewController.swift in Sources */,
 				F0BC106D232F042200382455 /* ViewControllerViewModel.swift in Sources */,
 				F0505764232E49E80062A1BC /* AppDelegate.swift in Sources */,
 				F0505796232E5A4F0062A1BC /* IntroViewController.swift in Sources */,
 				F0CABBF1232EEE52002E704B /* MainModel.swift in Sources */,
+				F0BC1076232F095700382455 /* MainViewController.swift in Sources */,
 				F0CABBEE232EEB72002E704B /* UIBezierPath+.swift in Sources */,
 				F0CABC03232EFF68002E704B /* UIViewController+.swift in Sources */,
 				F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */,

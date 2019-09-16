@@ -28,9 +28,9 @@ extension UIViewController {
 }
 
 extension UIViewController {
-  func present(_ viewControllerToPresent: UIViewController, options: (UIModalPresentationStyle, UIModalTransitionStyle), animated flag: Bool = true, completion: (() -> Void)? = nil) {
-    viewControllerToPresent.modalPresentationStyle = options.0
-    viewControllerToPresent.modalTransitionStyle = options.1
+  func present(_ viewControllerToPresent: UIViewController, options: (presentation: UIModalPresentationStyle, transition: UIModalTransitionStyle), animated flag: Bool = true, completion: (() -> Void)? = nil) {
+    viewControllerToPresent.modalPresentationStyle = options.presentation
+    viewControllerToPresent.modalTransitionStyle = options.transition
     
     present(viewControllerToPresent, animated: flag, completion: completion)
   }

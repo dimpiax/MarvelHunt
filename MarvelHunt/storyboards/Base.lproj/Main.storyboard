@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,27 +17,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Brand"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="154" y="61"/>
+        </scene>
+        <!--Main Navigation View Controller-->
+        <scene sceneID="sBe-4W-bDg">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationViewController" id="nuR-mH-7Uo" customClass="MainNavigationViewController" customModule="MarvelHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bIK-1n-XmT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Brand"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="St3-nG-3ss" kind="relationship" relationship="rootViewController" id="VaU-5S-28V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nmb-ZV-6qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="61"/>
         </scene>
         <!--Main View Controller-->
-        <scene sceneID="0FA-1I-TCY">
+        <scene sceneID="WV8-ND-OaX">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="epe-gw-dvx" customClass="MainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MEL-9V-26D">
+                <viewController storyboardIdentifier="MainViewController" id="St3-nG-3ss" customClass="MainViewController" customModule="MarvelHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="70G-53-wae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="IPy-d9-DBe"/>
+                        <viewLayoutGuide key="safeArea" id="sdo-Qh-rgh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f5e-Qc-Ovr"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rAt-G0-TsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al4-VM-nTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893" y="61"/>
+            <point key="canvasLocation" x="1574" y="61"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Brand">
+            <color red="0.86274509803921573" green="0.21176470588235294" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+    <color key="tintColor" name="Brand"/>
 </document>

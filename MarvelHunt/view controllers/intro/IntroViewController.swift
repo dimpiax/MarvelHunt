@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class IntroViewController: UIViewController {
-  var didRemove: (() -> Void)?
+  var willRemove: (() -> Void)?
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var label: UILabel! {
@@ -57,13 +57,13 @@ class IntroViewController: UIViewController {
   override func removeFromParent() {
     super.removeFromParent()
     
-    didRemove = nil
+    willRemove = nil
   }
 }
 
 extension IntroViewController: CAAnimationDelegate {
   func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    willRemove?()
     remove()
-    didRemove?()
   }
 }

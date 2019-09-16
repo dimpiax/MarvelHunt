@@ -21,14 +21,15 @@ extension VCFactory {
       intro = "IntroViewController"
     
     case
-      main = "MainViewController"
+      main = "MainViewController",
+      mainNav = "MainNavigationViewController"
     
     var storyboardId: String {
       switch self {
       case .intro:
         return "Intro"
         
-      case .main:
+      case .mainNav, .main:
         return "Main"
       }
     }
