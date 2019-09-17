@@ -35,7 +35,7 @@ class ComicsViewController: UIViewController, Modelable {
     super.viewWillAppear(animated)
     
     navigationController?.preTopViewController?.title = ""
-    navigationItem.title = _viewModel.title
+    navigationItem.title = _viewModel.title.presented ?? _viewModel.subtitle
     
     imageView.image = _viewModel.image
     titleLabel.text = _viewModel.title

@@ -9,226 +9,46 @@
 import Foundation
 
 struct ComicsData {
-  typealias Id = Int
-  
-  let id: Id
+  let id: Int
   let title: String
   let variantDescription: String
   let desc: String
   let thumbnail: URL
   let issue: URL?
-  
-  static func dummy() -> ComicsData {
-    return .init(id: 1689,
-                 title: "Official Handbook of the Marvel Universe (2004) #10 (MARVEL KNIGHTS)",
-                 variantDescription: "MARVEL KNIGHTS",
-                 desc: "On the mean streets of the Marvel Universe, the kid gloves come off. Guardian devils, vengeance-seeking vigilantes and enigmatic assassins stalk the city's dark underbelly _ and the urban action unfolds with gritty intensity. The newest entry in Marvel's best-selling Handbook series, OHOTMUMK04 includes in-depth bios on a host of the House's edgiest icons - from Black Panther to Shang-Chi!",
-                 thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9.jpg")!,
-                 issue: URL(string: "http://marvel.com/comics/issue/1689/official_handbook_of_the_marvel_universe_2004_10_marvel_knights/marvel_knights?utm_campaign=apiRef&utm_source=fe72df79060725908ac5e758d88340cd")!
-    )
-  }
 }
 
-/*
-{
- "id": 1689,
- "digitalId": 0,
- "title": "Official Handbook of the Marvel Universe (2004) #10 (MARVEL KNIGHTS)",
- "issueNumber": 10,
- "variantDescription": "MARVEL KNIGHTS",
- "description": "On the mean streets of the Marvel Universe, the kid gloves come off. Guardian devils, vengeance-seeking vigilantes and enigmatic assassins stalk the city's dark underbelly _ and the urban action unfolds with gritty intensity. The newest entry in Marvel's best-selling Handbook series, OHOTMUMK04 includes in-depth bios on a host of the House's edgiest icons - from Black Panther to Shang-Chi!",
- "modified": "-0001-11-30T00:00:00-0500",
- "isbn": "",
- "upc": "5960605694-00111",
- "diamondCode": "",
- "ean": "",
- "issn": "",
- "format": "Comic",
- "pageCount": 0,
- "textObjects": [
- {
- "type": "issue_solicit_text",
- "language": "en-us",
- "text": "On the mean streets of the Marvel Universe, the kid gloves come off. Guardian devils, vengeance-seeking vigilantes and enigmatic assassins stalk the city's dark underbelly _ and the urban action unfolds with gritty intensity. The newest entry in Marvel's best-selling Handbook series, OHOTMUMK04 includes in-depth bios on a host of the House's edgiest icons - from Black Panther to Shang-Chi!"
- }
- ],
- "resourceURI": "http://gateway.marvel.com/v1/public/comics/1689",
- "urls": [
- {
- "type": "detail",
- "url": "http://marvel.com/comics/issue/1689/official_handbook_of_the_marvel_universe_2004_10_marvel_knights/marvel_knights?utm_campaign=apiRef&utm_source=fe72df79060725908ac5e758d88340cd"
- }
- ],
- "series": {
- "resourceURI": "http://gateway.marvel.com/v1/public/series/787",
- "name": "Official Handbook of the Marvel Universe (2004)"
- },
- "variants": [],
- "collections": [],
- "collectedIssues": [],
- "dates": [
- {
- "type": "onsaleDate",
- "date": "2029-12-31T00:00:00-0500"
- },
- {
- "type": "focDate",
- "date": "-0001-11-30T00:00:00-0500"
- }
- ],
- "prices": [
- {
- "type": "printPrice",
- "price": 3.99
- }
- ],
- "thumbnail": {
- "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9",
- "extension": "jpg"
- },
- "images": [
- {
- "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9",
- "extension": "jpg"
- }
- ],
- "creators": {
- "available": 9,
- "collectionURI": "http://gateway.marvel.com/v1/public/comics/1689/creators",
- "items": [
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/887",
- "name": "Ronald Byrd",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/902",
- "name": "Jeff Christiansen",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/903",
- "name": "Anthony Flamini",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/888",
- "name": "Michael Hoskin",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/897",
- "name": "Sean Mcquaid",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/394",
- "name": "Eric J. Moreels",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/900",
- "name": "Barry Reese",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/896",
- "name": "Stuart Vandal",
- "role": "writer"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/creators/490",
- "name": "Pat Lee",
- "role": "penciller (cover)"
- }
- ],
- "returned": 9
- },
- "characters": {
- "available": 14,
- "collectionURI": "http://gateway.marvel.com/v1/public/comics/1689/characters",
- "items": [
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009156",
- "name": "Apocalypse"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009197",
- "name": "Blink"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009243",
- "name": "Colossus"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009313",
- "name": "Gambit"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009349",
- "name": "Holocaust (Age of Apocalypse)"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009417",
- "name": "Magneto"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009447",
- "name": "Mister Sinister"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009546",
- "name": "Rogue"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010969",
- "name": "Sabretooth (Age of Apocalypse)"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010975",
- "name": "Shadowcat (Age of Apocalypse)"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010976",
- "name": "Silver Samurai (Age of Apocalypse)"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010979",
- "name": "Storm (Age of Apocalypse)"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009636",
- "name": "Sunfire"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009718",
- "name": "Wolverine"
- }
- ],
- "returned": 14
- },
- "stories": {
- "available": 2,
- "collectionURI": "http://gateway.marvel.com/v1/public/comics/1689/stories",
- "items": [
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/stories/4612",
- "name": "Cover #4612",
- "type": "cover"
- },
- {
- "resourceURI": "http://gateway.marvel.com/v1/public/stories/4613",
- "name": "Interior #4613",
- "type": "interiorStory"
- }
- ],
- "returned": 2
- },
- "events": {
- "available": 0,
- "collectionURI": "http://gateway.marvel.com/v1/public/comics/1689/events",
- "items": [],
- "returned": 0
- }
+extension ComicsData: Decodable {
+  private enum Key: String, CodingKey {
+    case
+      id,
+      title,
+      variantDescription,
+      description,
+      thumbnail,
+      urls
+  }
+  
+  private struct Thumbnail: Decodable {
+    let path: String
+    let `extension`: String
+    
+    var url: URL? {
+      return URL(string: "\(path).\(self.extension)")
+    }
+  }
+  
+  private struct Issues: Decodable {
+    let url: URL
+  }
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Key.self)
+    
+    id = try container.decode(Int.self, forKey: .id)
+    title = try container.decode(String.self, forKey: .title)
+    variantDescription = try container.decode(String.self, forKey: .variantDescription)
+    desc = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+    thumbnail = try container.decode(Thumbnail.self, forKey: .thumbnail).url!
+    issue = try container.decodeIfPresent([Issues].self, forKey: .urls)?.first?.url
+  }
 }
- */

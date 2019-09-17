@@ -14,7 +14,7 @@ class ComicsCollectionViewModel {
   
   private(set) var data: [ComicsData]?
   
-  private var _tasks = [ComicsData.Id: URLSessionDataTask]()
+  private var _tasks = [Int: URLSessionDataTask]()
   
   var didCompleteLoadImage: ((IndexPath) -> Void)?
   
@@ -28,15 +28,24 @@ class ComicsCollectionViewModel {
   
   init(mainModel: MainModel) {
     _mainModel = mainModel
-    
-    data = [
-      .dummy(),
-      .dummy(),
-      .dummy(),
-      .dummy(),
-      .dummy(),
-      .dummy()
-    ]
+  }
+  
+  func loadComics(completion: @escaping (Error?) -> Void) {
+    _mainModel.serverModel.loadComics {[weak self] result in
+      guard let self = self else { return }
+      
+      do {
+        let value = try result.get()
+        DispatchQueue.main.async {
+          self.data = value
+          completion(nil)
+        }
+      } catch {
+        DispatchQueue.main.async {
+          completion(error)
+        }
+      }
+    }
   }
   
   func getData(indexPath: IndexPath) -> ComicsData? {

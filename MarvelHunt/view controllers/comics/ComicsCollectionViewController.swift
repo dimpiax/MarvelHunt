@@ -12,6 +12,8 @@ import UIKit
 class ComicsCollectionViewController: UICollectionViewController, Modelable {
   var mainModel: MainModel!
   
+  private let _activityView = UIActivityIndicatorView(style: .gray)
+  
   private lazy var _viewModel = ComicsCollectionViewModel(mainModel: mainModel)
   
   override func viewDidLoad() {
@@ -29,8 +31,36 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
         self.collectionView.reloadItems(at: [indexPath])
       }, completion: nil)
     }
+    
+    view.addSubview(_activityView)
+    
 
 //    navigationItem.searchController = getSearchController()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+    _activityView.frame = view.bounds
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    _activityView.startAnimating()
+    _viewModel.loadComics {[weak self] error in
+      guard let self = self else { return }
+      
+      self._activityView.stopAnimating()
+      
+      if let error = error {
+        print(error)
+        // TODO: show alert
+        return
+      }
+      
+      self.collectionView.reloadData()
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
