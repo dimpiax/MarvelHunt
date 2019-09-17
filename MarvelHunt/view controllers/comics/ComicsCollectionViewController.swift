@@ -19,6 +19,8 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = _viewModel.controllerTitle
+    
     ComicsCollectionViewModel.setup(collectionView: collectionView)
     ComicsCollectionViewModel.setup(collectionViewLayout: collectionViewLayout)
     collectionView.delegate = self
@@ -33,9 +35,6 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
     }
     
     view.addSubview(_activityView)
-    
-
-//    navigationItem.searchController = getSearchController()
   }
   
   override func viewDidLayoutSubviews() {
@@ -47,15 +46,16 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    guard _viewModel.isFirstLoad else { return }
+    
     _activityView.startAnimating()
     _viewModel.loadComics {[weak self] error in
       guard let self = self else { return }
       
       self._activityView.stopAnimating()
       
-      if let error = error {
-        print(error)
-        // TODO: show alert
+      if let _ = error {
+        self.present(UIAlertController.getErrorAlertController())
         return
       }
       
@@ -100,15 +100,6 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return _viewModel.numberOfSections
-  }
-  
-  private func getSearchController() -> UISearchController {
-    let searchController = UISearchController(searchResultsController: nil)
-    let searchBar = searchController.searchBar
-    searchBar.tintColor = .white
-    searchBar.barTintColor = .white
-    
-    return searchController
   }
 }
 

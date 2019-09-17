@@ -18,33 +18,44 @@ class ComicsCollectionViewModel {
   
   var didCompleteLoadImage: ((IndexPath) -> Void)?
   
-  var numberOfSections: Int {
-    return 1
-  }
+  var controllerTitle: String { return "Comics" }
   
+  var numberOfSections: Int { return 1 }
   var numberOfItemsInSection: Int {
     return data?.count ?? 0
   }
+  
+  private(set) var isFirstLoad = true
   
   init(mainModel: MainModel) {
     _mainModel = mainModel
   }
   
   func loadComics(completion: @escaping (Error?) -> Void) {
-    _mainModel.serverModel.loadComics {[weak self] result in
-      guard let self = self else { return }
-      
-      do {
-        let value = try result.get()
-        DispatchQueue.main.async {
-          self.data = value
-          completion(nil)
-        }
-      } catch {
-        DispatchQueue.main.async {
-          completion(error)
+    do {
+      try _mainModel.serverModel.loadComics {[weak self] result in
+        guard let self = self else { return }
+        
+        do {
+          let (value, cacheData) = try result.get()
+          if let cacheData = cacheData {
+            URLCache.shared.store(cacheData: cacheData)
+          }
+          
+          DispatchQueue.main.async {
+            self.isFirstLoad = false
+            self.data = value
+            completion(nil)
+          }
+        } catch {
+          DispatchQueue.main.async {
+            completion(error)
+          }
         }
       }
+        .resume()
+    } catch {
+      completion(error)
     }
   }
   

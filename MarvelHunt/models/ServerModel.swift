@@ -11,38 +11,41 @@ import UIKit
 class ServerModel {
   typealias JSON = [AnyHashable: Any]
   
-  func loadComics(completion: @escaping (Result<[ComicsData], Error>) -> Void) {
-    guard var components = URLComponents(url: URL(string: "https://gateway.marvel.com/v1/public/comics")!, resolvingAgainstBaseURL: true) else {
-      return
-    }
-    
-    components.queryItems = [
-      .init(name: "ts", value: "5"),
-      .init(name: "apikey", value: "fe72df79060725908ac5e758d88340cd"),
-      .init(name: "hash", value: "bbecd88ac5fc07796ab1a21f97d93286"),
-    ]
-    
-    guard let url = components.url else { return }
-    
-    let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-    urlSession.dataTask(with: url) { data, response, error in
-      guard let data = data else { return }
-      
-      do {
-        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else {
+  func loadComics(completion: @escaping (Result<([ComicsData], CacheData?), Error>) -> Void) throws -> URLSessionDataTask {
+    let request = URLRequest(url: try URLBuilder.getComicsURL())
+    return URLSession(configuration: URLSessionConfiguration.default)
+      .dataTask(with: request) {[unowned self] data, response, error in
+        if let error = error {
+          let err = error as NSError
+          print(err.code)
+          if err.code == -1009, let data = self.loadDataFromCache(request: request) {
+            do {
+              let result = try JSONDecoder().decode([ComicsData].self, from: data)
+              completion(.success((result, nil)))
+            } catch {
+              URLCache.shared.removeCachedResponse(for: request)
+              completion(.failure(error))
+            }
+            return
+          }
+
+          completion(.failure(error))
           return
         }
-        guard let results = (json["data"] as? JSON)?["results"] else { return }
-        let data = try JSONSerialization.data(withJSONObject: results, options: [])
         
-        let result = try JSONDecoder().decode([ComicsData].self, from: data)
-        print(result.count)
-        completion(.success(result))
-      } catch {
-        completion(.failure(error))
+        guard
+          let response = response,
+          let data = data
+        else { return }
+        
+        do {
+          let comicsData = try self.getResults(data: data)
+          let result = try JSONDecoder().decode([ComicsData].self, from: comicsData)
+          completion(.success((result, CacheData(request: request, response: response, data: comicsData))))
+        } catch {
+          completion(.failure(error))
+        }
       }
-    }
-    .resume()
   }
   
   func requestImage(with request: URLRequest, completion: @escaping (Result<(UIImage, CacheData), Error>) -> Void) -> URLSessionDataTask {
@@ -53,17 +56,32 @@ class ServerModel {
         return
       }
       
-      // TODO: check response also
+      // TODO: check response validity
       guard
         let response = response,
         let data = data,
         let image = UIImage(data: data)
       else {
-        completion(.failure(NSError()))
+        completion(.failure(AppError.noData))
         return
       }
       
       completion(.success((image, CacheData(request: request, response: response, data: data))))
     }
+  }
+  
+  private func getResults(data: Data) throws -> Data {
+    guard
+      let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON,
+      let results = (json["data"] as? JSON)?["results"]
+    else {
+      throw AppError.noData
+    }
+  
+    return try JSONSerialization.data(withJSONObject: results, options: [])
+  }
+  
+  private func loadDataFromCache(request: URLRequest) -> Data? {
+    return URLCache.shared.cachedResponse(for: request)?.data
   }
 }
