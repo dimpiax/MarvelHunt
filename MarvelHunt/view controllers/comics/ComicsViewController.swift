@@ -28,7 +28,7 @@ class ComicsViewController: UIViewController, Modelable {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    initShareButton()
+    setupShareButton()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -37,13 +37,23 @@ class ComicsViewController: UIViewController, Modelable {
     navigationController?.preTopViewController?.title = ""
     navigationItem.title = _viewModel.title.presented ?? _viewModel.subtitle
     
-    imageView.image = _viewModel.image
+    mainModel.imageFetcher.requestImage(url: model.data.thumbnail) {[weak self] image in
+      guard let self = self else { return }
+      
+      DispatchQueue.main.async {
+        self.imageView.image = image
+      }
+    }?
+      .resume()
+    
     titleLabel.text = _viewModel.title
     subtitleLabel.text = _viewModel.subtitle
     descTextView.text = _viewModel.desc
   }
-  
-  private func initShareButton() {
+}
+
+private extension ComicsViewController {
+  func setupShareButton() {
     guard _viewModel.isPossibleForSharing else { return }
     
     navigationItem.rightBarButtonItem = .init(
@@ -51,7 +61,9 @@ class ComicsViewController: UIViewController, Modelable {
       target: self,
       action: #selector(didTapActionButton(_:)))
   }
-  
+}
+
+private extension ComicsViewController {
   @IBAction func didTapButton() {
     let controller = UIAlertController(
       title: "You've hidden the magazine!",
@@ -62,8 +74,10 @@ class ComicsViewController: UIViewController, Modelable {
     
     present(controller)
   }
+}
   
-  @objc private func didTapActionButton(_ value: UIBarButtonItem) {
+@objc private extension ComicsViewController {
+  func didTapActionButton(_ value: UIBarButtonItem) {
     guard let url = _viewModel.shareURL else {
       assertionFailure("Share URL must be presented in this action")
       return

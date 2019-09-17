@@ -11,63 +11,46 @@ import UIKit
 class ServerModel {
   typealias JSON = [AnyHashable: Any]
   
-  func loadComics(completion: @escaping (Result<([ComicsData], CacheData?), Error>) -> Void) throws -> URLSessionDataTask {
-    let request = URLRequest(url: try URLBuilder.getComicsURL())
+  func loadComics(completion: @escaping (Result<[ComicsData], Error>) -> Void) throws -> URLSessionDataTask {
+    let request = URLRequest(url: try URLBuilder.getComicsURL(), cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
+    
     return URLSession(configuration: URLSessionConfiguration.default)
       .dataTask(with: request) {[unowned self] data, response, error in
-        if let error = error {
-          let err = error as NSError
-          print(err.code)
-          if err.code == -1009, let data = self.loadDataFromCache(request: request) {
-            do {
-              let result = try JSONDecoder().decode([ComicsData].self, from: data)
-              completion(.success((result, nil)))
-            } catch {
-              URLCache.shared.removeCachedResponse(for: request)
-              completion(.failure(error))
-            }
-            return
-          }
-
-          completion(.failure(error))
-          return
-        }
-        
         guard
-          let response = response,
           let data = data
         else { return }
         
         do {
           let comicsData = try self.getResults(data: data)
+          
           let result = try JSONDecoder().decode([ComicsData].self, from: comicsData)
-          completion(.success((result, CacheData(request: request, response: response, data: comicsData))))
+          completion(.success(result))
         } catch {
           completion(.failure(error))
         }
       }
   }
   
-  func requestImage(with request: URLRequest, completion: @escaping (Result<(UIImage, CacheData), Error>) -> Void) -> URLSessionDataTask {
-    let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-    return urlSession.dataTask(with: request) { data, response, error in
-      if let error = error {
-        completion(.failure(error))
-        return
+  func requestImage(with url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask {
+    let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
+    
+    return URLSession(configuration: URLSessionConfiguration.default)
+      .dataTask(with: request) { data, response, error in
+        if let error = error {
+          completion(.failure(error))
+          return
+        }
+        
+        guard
+          let data = data,
+          let image = UIImage(data: data)
+        else {
+          completion(.failure(AppError.noData))
+          return
+        }
+        
+        completion(.success(image))
       }
-      
-      // TODO: check response validity
-      guard
-        let response = response,
-        let data = data,
-        let image = UIImage(data: data)
-      else {
-        completion(.failure(AppError.noData))
-        return
-      }
-      
-      completion(.success((image, CacheData(request: request, response: response, data: data))))
-    }
   }
   
   private func getResults(data: Data) throws -> Data {
@@ -79,9 +62,5 @@ class ServerModel {
     }
   
     return try JSONSerialization.data(withJSONObject: results, options: [])
-  }
-  
-  private func loadDataFromCache(request: URLRequest) -> Data? {
-    return URLCache.shared.cachedResponse(for: request)?.data
   }
 }

@@ -47,7 +47,15 @@ class UIComicsCollectionViewCell: UICollectionViewCell, Identifable {
     return value
   }()
   
+  private var _task: URLSessionDataTask?
+  
+  var imageFetcher: ImageFetcher!
+  
   func apply(data: ComicsData) {
+    clear()
+    
+    loadCover(url: data.thumbnail)
+    
     _titleLabel.text = data.variantDescription
     _titleLabel.sizeToFit()
     
@@ -58,10 +66,6 @@ class UIComicsCollectionViewCell: UICollectionViewCell, Identifable {
       .init(id: data.id, data: data, coordinate: .init(latitude: 41.3851, longitude: 2.1734)),
       .init(id: data.id, data: data, coordinate: .init(latitude: 55.6761, longitude: 12.5683)),
     ])
-  }
-  
-  func apply(image: UIImage?) {
-    _coverImageView.image = image
   }
   
   override init(frame: CGRect) {
@@ -75,8 +79,8 @@ class UIComicsCollectionViewCell: UICollectionViewCell, Identifable {
   }
 }
 
-extension UIComicsCollectionViewCell {
-  private func setup() {
+private extension UIComicsCollectionViewCell {
+  func setup() {
     let cornerRadius: CGFloat = 12
     
     backgroundColor = UIColor.light
@@ -100,7 +104,7 @@ extension UIComicsCollectionViewCell {
     contentView.addSubview(_subtitleLabel)
     contentView.addSubview(_huntCollectionView)
     
-    contentView.directionalLayoutMargins = .init(top: 12, leading: 12, bottom: 8, trailing: 12)
+    contentView.directionalLayoutMargins = .init(top: 12, leading: 12, bottom: 4, trailing: 12)
     let layoutMargins = contentView.layoutMarginsGuide
     
     NSLayoutConstraint.activate([
@@ -117,5 +121,20 @@ extension UIComicsCollectionViewCell {
       _huntCollectionView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor),
       _huntCollectionView.heightAnchor.constraint(equalToConstant: 40)
     ])
+  }
+  
+  private func loadCover(url: URL) {
+    _task = imageFetcher.requestImage(url: url) {[weak self] image in
+      guard let self = self else { return }
+      DispatchQueue.main.async {
+        self._coverImageView.image = image
+      }
+    }
+    _task?.resume()
+  }
+  
+  func clear() {
+    _task?.cancel()
+    _coverImageView.image = nil
   }
 }

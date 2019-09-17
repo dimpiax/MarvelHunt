@@ -13,8 +13,6 @@
 		F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B623304886003E9CA8 /* ComicsViewModel.swift */; };
 		F000D0B9233048C6003E9CA8 /* UIActivityViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */; };
 		F000D0BC23304BEA003E9CA8 /* CAShapeLayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */; };
-		F000D0BE233068B7003E9CA8 /* URLCache+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0BD233068B7003E9CA8 /* URLCache+.swift */; };
-		F000D0C0233068CF003E9CA8 /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0BF233068CF003E9CA8 /* CacheData.swift */; };
 		F000D0C2233068E6003E9CA8 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0C1233068E6003E9CA8 /* ServerModel.swift */; };
 		F000D0C423307B77003E9CA8 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0C323307B77003E9CA8 /* Collection+.swift */; };
 		F000D0C62330CDD4003E9CA8 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000D0C52330CDD4003E9CA8 /* URLBuilder.swift */; };
@@ -90,8 +88,6 @@
 		F000D0B623304886003E9CA8 /* ComicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewModel.swift; sourceTree = "<group>"; };
 		F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+.swift"; sourceTree = "<group>"; };
 		F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+.swift"; sourceTree = "<group>"; };
-		F000D0BD233068B7003E9CA8 /* URLCache+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCache+.swift"; sourceTree = "<group>"; };
-		F000D0BF233068CF003E9CA8 /* CacheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheData.swift; sourceTree = "<group>"; };
 		F000D0C1233068E6003E9CA8 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		F000D0C323307B77003E9CA8 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		F000D0C52330CDD4003E9CA8 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -212,7 +208,6 @@
 				F000D0B423302B6E003E9CA8 /* UINavigationController+.swift */,
 				F000D0B8233048C6003E9CA8 /* UIActivityViewController+.swift */,
 				F000D0BB23304BEA003E9CA8 /* CAShapeLayer+.swift */,
-				F000D0BD233068B7003E9CA8 /* URLCache+.swift */,
 				F000D0C323307B77003E9CA8 /* Collection+.swift */,
 				F000D0CE2330D496003E9CA8 /* UIAlertController+.swift */,
 				F0FF77A72330E53F0041E8C3 /* Notification.Name+.swift */,
@@ -353,7 +348,6 @@
 			children = (
 				F0E3C5322330F25F00E0F7BE /* HuntData.swift */,
 				F0BC1084232F8E8F00382455 /* ComicsData.swift */,
-				F000D0BF233068CF003E9CA8 /* CacheData.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -611,7 +605,6 @@
 				F0CABBFD232EF7AE002E704B /* VCFactory.swift in Sources */,
 				F0BC107C232F8E1500382455 /* UICollectionView+.swift in Sources */,
 				F000D0C62330CDD4003E9CA8 /* URLBuilder.swift in Sources */,
-				F000D0C0233068CF003E9CA8 /* CacheData.swift in Sources */,
 				F0CABBEC232EEB19002E704B /* CABasicAnimation+.swift in Sources */,
 				F000D0C82330CE7C003E9CA8 /* Crypto.swift in Sources */,
 				F000D0B723304887003E9CA8 /* ComicsViewModel.swift in Sources */,
@@ -619,7 +612,6 @@
 				F000D0B523302B6E003E9CA8 /* UINavigationController+.swift in Sources */,
 				F0BC1073232F046A00382455 /* MainViewController.swift in Sources */,
 				F000D0CD2330D3E2003E9CA8 /* AppError.swift in Sources */,
-				F000D0BE233068B7003E9CA8 /* URLCache+.swift in Sources */,
 				F0BC1078232F0D1500382455 /* MainNavigationViewController.swift in Sources */,
 				F000D0CF2330D497003E9CA8 /* UIAlertController+.swift in Sources */,
 				F0BC106D232F042200382455 /* ViewControllerViewModel.swift in Sources */,

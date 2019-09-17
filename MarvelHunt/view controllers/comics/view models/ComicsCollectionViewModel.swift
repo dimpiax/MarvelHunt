@@ -16,8 +16,6 @@ class ComicsCollectionViewModel {
   
   private var _tasks = [Int: URLSessionDataTask]()
   
-  var didCompleteLoadImage: ((IndexPath) -> Void)?
-  
   var controllerTitle: String { return "Comics" }
   
   var numberOfSections: Int { return 1 }
@@ -44,11 +42,7 @@ class ComicsCollectionViewModel {
         guard let self = self else { return }
         
         do {
-          let (value, cacheData) = try result.get()
-          if let cacheData = cacheData {
-            URLCache.shared.store(cacheData: cacheData)
-          }
-          
+          let value = try result.get()
           DispatchQueue.main.async {
             self.isFirstLoad = false
             self.data = value
@@ -70,21 +64,11 @@ class ComicsCollectionViewModel {
     return data?[indexPath.row]
   }
   
-  func getImage(url: URL) -> UIImage? {
-    return _mainModel.imageFetcher.getImage(url: url)
-  }
-  
   func loadImage(indexPath: IndexPath) {
     guard let data = getData(indexPath: indexPath) else { return }
     let id = data.id
     
-    let task = _mainModel.imageFetcher.requestImage(url: data.thumbnail) {[weak self] image in
-      guard let self = self else { return }
-      
-      DispatchQueue.main.async {
-        self.didCompleteLoadImage?(indexPath)
-      }
-    }
+    let task = _mainModel.imageFetcher.requestImage(url: data.thumbnail) { _ in }
     task?.resume()
     
     _tasks[id] = task

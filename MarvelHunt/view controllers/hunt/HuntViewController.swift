@@ -23,10 +23,10 @@ class HuntViewController: UIViewController {
     
     titleLabel.text = _viewModel.title
     mapView.setCenter(_viewModel.coordinate, animated: false)
-    mapView.setCamera(.init(lookingAtCenter: _viewModel.coordinate, fromDistance: 2, pitch: 0, heading: 0), animated: false)
+    mapView.setCamera(.init(lookingAtCenter: _viewModel.coordinate, fromDistance: 250, pitch: 0, heading: 0), animated: false)
   }
   
-  @IBAction func didTapCheckIn() {
+  @IBAction private func didTapCheckIn() {
     let controller = UIAlertController(
       title: "You've Checked!",
       message: "Please standby, you will receive notification in 10 seconds.\n\nThis is not true for now!",
@@ -37,7 +37,7 @@ class HuntViewController: UIViewController {
     present(controller)
   }
   
-  @IBAction func didTapClose() {
+  @IBAction private func didTapClose() {
     dismiss(animated: true, completion: nil)
   }
 }

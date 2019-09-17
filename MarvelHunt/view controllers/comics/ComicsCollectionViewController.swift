@@ -26,14 +26,6 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
     collectionView.delegate = self
     collectionView.prefetchDataSource = self
     
-    _viewModel.didCompleteLoadImage = {[weak self] indexPath in
-      guard let self = self else { return }
-      
-      self.collectionView.performBatchUpdates({
-        self.collectionView.reloadItems(at: [indexPath])
-      }, completion: nil)
-    }
-    
     view.addSubview(_activityView)
   }
   
@@ -86,7 +78,7 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
     switch (SegueIdentifier(value: segue), segue.destination, sender) {
     case (.comicsDetail, let vc as ComicsViewController, let data as ComicsData):
       vc.mainModel = mainModel
-      vc.model = ComicsModel(data: data, image: _viewModel.getImage(url: data.thumbnail))
+      vc.model = ComicsModel(data: data)
       
     default: break
     }
@@ -102,9 +94,8 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
       let data = _viewModel.getData(indexPath: indexPath)
     else { return }
     
+    cell.imageFetcher = mainModel.imageFetcher
     cell.apply(data: data)
-    cell.apply(image: _viewModel.getImage(url: data.thumbnail))
-    _viewModel.loadImage(indexPath: indexPath)
   }
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

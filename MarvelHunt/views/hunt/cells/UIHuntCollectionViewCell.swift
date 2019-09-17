@@ -12,7 +12,8 @@ import UIKit
 class UIHuntCollectionViewCell: UICollectionViewCell, Identifable {
   private let _titleLabel: UILabel = {
     let value = UILabel()
-    value.font = UIFont.systemFont(ofSize: 14, weight: .light)
+    value.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
+    value.textColor = UIColor.darkText.withAlphaComponent(0.5)
     value.textAlignment = .center
     return value
   }()

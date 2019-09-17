@@ -24,7 +24,7 @@ struct URLBuilder {
         throw AppError.invalidURL
     }
     
-    let timestampString = "\(Date().timeIntervalSince1970)"
+    let timestampString = "(Date().timeIntervalSince1970)"
     let hash = try Credentials.getHash(prefix: timestampString)
     components.queryItems = [
       .init(name: "ts", value: timestampString),
