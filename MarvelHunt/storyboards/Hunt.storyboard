@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hunt View Controller-->
+        <scene sceneID="0Tv-jZ-xkS">
+            <objects>
+                <viewController storyboardIdentifier="HuntViewController" id="ocJ-oy-SF4" customClass="HuntViewController" customModule="MarvelHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9eq-Uo-bZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk7-d6-aek">
+                                <rect key="frame" x="20" y="229" width="374" height="527"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tx8-UY-gWI">
+                                <rect key="frame" x="20" y="84" width="374" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In at the current hunt location for receiving some surprises..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7W-4Z-Gnx">
+                                <rect key="frame" x="20" y="138" width="374" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iie-99-qsS">
+                                <rect key="frame" x="20" y="806" width="374" height="60"/>
+                                <color key="backgroundColor" name="Brand"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="M3G-iw-JC4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                                <state key="normal" title="CHECK IN">
+                                    <color key="titleColor" name="Light"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapCheckIn" destination="ocJ-oy-SF4" eventType="touchUpInside" id="oav-iz-U71"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD5-MQ-jC5">
+                                <rect key="frame" x="344" y="49" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" name="Brand"/>
+                                <state key="normal" title="CLOSE"/>
+                                <connections>
+                                    <action selector="didTapClose" destination="ocJ-oy-SF4" eventType="touchUpInside" id="Uqc-Im-mw8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iie-99-qsS" firstAttribute="top" secondItem="Hk7-d6-aek" secondAttribute="bottom" constant="50" id="0xB-cQ-A7S"/>
+                            <constraint firstItem="Uuh-5q-Fgo" firstAttribute="trailing" secondItem="Hk7-d6-aek" secondAttribute="trailing" constant="20" id="ClZ-E3-SCu"/>
+                            <constraint firstItem="k7W-4Z-Gnx" firstAttribute="leading" secondItem="Uuh-5q-Fgo" secondAttribute="leading" constant="20" id="EVI-1E-VH4"/>
+                            <constraint firstItem="k7W-4Z-Gnx" firstAttribute="top" secondItem="Tx8-UY-gWI" secondAttribute="bottom" constant="21.5" id="EXn-jH-saM"/>
+                            <constraint firstItem="Uuh-5q-Fgo" firstAttribute="trailing" secondItem="Iie-99-qsS" secondAttribute="trailing" constant="20" id="MaY-ja-rjn"/>
+                            <constraint firstItem="RD5-MQ-jC5" firstAttribute="top" secondItem="Uuh-5q-Fgo" secondAttribute="top" constant="5" id="NdI-ed-omn"/>
+                            <constraint firstItem="Hk7-d6-aek" firstAttribute="leading" secondItem="Uuh-5q-Fgo" secondAttribute="leading" constant="20" id="OtT-Ua-7x6"/>
+                            <constraint firstItem="Iie-99-qsS" firstAttribute="leading" secondItem="Uuh-5q-Fgo" secondAttribute="leading" constant="20" id="R6Q-B5-vFB"/>
+                            <constraint firstAttribute="bottom" secondItem="Iie-99-qsS" secondAttribute="bottom" constant="30" id="RHw-bc-dlf"/>
+                            <constraint firstItem="Uuh-5q-Fgo" firstAttribute="trailing" secondItem="k7W-4Z-Gnx" secondAttribute="trailing" constant="20" id="S1S-M0-KgF"/>
+                            <constraint firstItem="Hk7-d6-aek" firstAttribute="top" secondItem="k7W-4Z-Gnx" secondAttribute="bottom" constant="30" id="VoF-kK-nQq"/>
+                            <constraint firstItem="Tx8-UY-gWI" firstAttribute="top" secondItem="Uuh-5q-Fgo" secondAttribute="top" constant="40" id="Wbm-LI-LDD"/>
+                            <constraint firstItem="Uuh-5q-Fgo" firstAttribute="trailing" secondItem="RD5-MQ-jC5" secondAttribute="trailing" constant="20" id="ZYh-Iy-vpJ"/>
+                            <constraint firstItem="Tx8-UY-gWI" firstAttribute="leading" secondItem="Uuh-5q-Fgo" secondAttribute="leading" constant="20" id="rcF-bA-z7i"/>
+                            <constraint firstItem="Uuh-5q-Fgo" firstAttribute="trailing" secondItem="Tx8-UY-gWI" secondAttribute="trailing" constant="20" id="rqd-Iv-Qcw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uuh-5q-Fgo"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Hk7-d6-aek" id="xLq-QY-ehq"/>
+                        <outlet property="titleLabel" destination="Tx8-UY-gWI" id="kiQ-O4-YkD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdZ-be-r0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Brand">
+            <color red="0.86299997568130493" green="0.21199999749660492" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Light">
+            <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

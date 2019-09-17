@@ -13,5 +13,7 @@ class MainModel {
   
   let serverModel = ServerModel()
   
+  let comicsModel = ComicsCollectionModel()
+  
   lazy var imageFetcher = ImageFetcher(serverModel: serverModel)
 }

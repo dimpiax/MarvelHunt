@@ -25,7 +25,14 @@ class ComicsCollectionViewModel {
     return data?.count ?? 0
   }
   
-  private(set) var isFirstLoad = true
+  private(set) var isFirstLoad: Bool {
+    get {
+      return _mainModel.comicsModel.isFirstLoad
+    }
+    set {
+      _mainModel.comicsModel.isFirstLoad = newValue
+    }
+  }
   
   init(mainModel: MainModel) {
     _mainModel = mainModel

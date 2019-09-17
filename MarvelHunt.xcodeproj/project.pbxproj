@@ -55,6 +55,15 @@
 		F0CABBFF232EFBF4002E704B /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CABBFE232EFBF4002E704B /* Intro.storyboard */; };
 		F0CABC01232EFC8A002E704B /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABC00232EFC8A002E704B /* ViewControllerTests.swift */; };
 		F0CABC03232EFF68002E704B /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CABC02232EFF68002E704B /* UIViewController+.swift */; };
+		F0E3C5312330F1D300E0F7BE /* UIHuntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E3C5302330F1D300E0F7BE /* UIHuntCollectionViewCell.swift */; };
+		F0E3C5332330F25F00E0F7BE /* HuntData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E3C5322330F25F00E0F7BE /* HuntData.swift */; };
+		F0E3C5352330F37400E0F7BE /* HuntViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E3C5342330F37400E0F7BE /* HuntViewViewModel.swift */; };
+		F0FF77A42330DE460041E8C3 /* HuntCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF77A32330DE460041E8C3 /* HuntCollectionView.swift */; };
+		F0FF77A82330E53F0041E8C3 /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF77A72330E53F0041E8C3 /* Notification.Name+.swift */; };
+		F0FF77AB2330E6440041E8C3 /* HuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF77AA2330E6440041E8C3 /* HuntViewController.swift */; };
+		F0FF77AD2330E6900041E8C3 /* Hunt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FF77AC2330E6900041E8C3 /* Hunt.storyboard */; };
+		F0FF77AF2330EF500041E8C3 /* ComicsCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF77AE2330EF500041E8C3 /* ComicsCollectionModel.swift */; };
+		F0FF77B42330F16D0041E8C3 /* HuntCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF77B32330F16D0041E8C3 /* HuntCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +138,15 @@
 		F0CABBFE232EFBF4002E704B /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		F0CABC00232EFC8A002E704B /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		F0CABC02232EFF68002E704B /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		F0E3C5302330F1D300E0F7BE /* UIHuntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHuntCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0E3C5322330F25F00E0F7BE /* HuntData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntData.swift; sourceTree = "<group>"; };
+		F0E3C5342330F37400E0F7BE /* HuntViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewViewModel.swift; sourceTree = "<group>"; };
+		F0FF77A32330DE460041E8C3 /* HuntCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HuntCollectionView.swift; path = ../HuntCollectionView.swift; sourceTree = "<group>"; };
+		F0FF77A72330E53F0041E8C3 /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
+		F0FF77AA2330E6440041E8C3 /* HuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewController.swift; sourceTree = "<group>"; };
+		F0FF77AC2330E6900041E8C3 /* Hunt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hunt.storyboard; sourceTree = "<group>"; };
+		F0FF77AE2330EF500041E8C3 /* ComicsCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionModel.swift; sourceTree = "<group>"; };
+		F0FF77B32330F16D0041E8C3 /* HuntCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F000D0B223300C62003E9CA8 /* ComicsModel.swift */,
+				F0FF77AE2330EF500041E8C3 /* ComicsCollectionModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -196,6 +215,7 @@
 				F000D0BD233068B7003E9CA8 /* URLCache+.swift */,
 				F000D0C323307B77003E9CA8 /* Collection+.swift */,
 				F000D0CE2330D496003E9CA8 /* UIAlertController+.swift */,
+				F0FF77A72330E53F0041E8C3 /* Notification.Name+.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -223,6 +243,7 @@
 		F0505762232E49E80062A1BC /* MarvelHunt */ = {
 			isa = PBXGroup;
 			children = (
+				F0FF77A22330DE280041E8C3 /* views */,
 				F000D0CB2330D3D3003E9CA8 /* errors */,
 				F0BC1083232F8E8300382455 /* data */,
 				F0CABBEF232EEE48002E704B /* models */,
@@ -265,6 +286,7 @@
 		F0505794232E5A3D0062A1BC /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F0FF77A92330E6390041E8C3 /* hunt */,
 				F0BC107D232F8E3000382455 /* comics */,
 				F0BC1071232F044400382455 /* view models */,
 				F0BC106E232F042700382455 /* intro */,
@@ -329,6 +351,7 @@
 		F0BC1083232F8E8300382455 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F0E3C5322330F25F00E0F7BE /* HuntData.swift */,
 				F0BC1084232F8E8F00382455 /* ComicsData.swift */,
 				F000D0BF233068CF003E9CA8 /* CacheData.swift */,
 			);
@@ -350,6 +373,7 @@
 				F050576F232E49EB0062A1BC /* LaunchScreen.storyboard */,
 				F0CABBFE232EFBF4002E704B /* Intro.storyboard */,
 				F0505767232E49E80062A1BC /* Main.storyboard */,
+				F0FF77AC2330E6900041E8C3 /* Hunt.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -390,6 +414,57 @@
 				F000D0C92330D0AE003E9CA8 /* Credentials.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		F0E3C52F2330F1C100E0F7BE /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				F0E3C5302330F1D300E0F7BE /* UIHuntCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		F0FF77A22330DE280041E8C3 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF77B12330F1500041E8C3 /* hunt */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F0FF77A92330E6390041E8C3 /* hunt */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF77B02330F12D0041E8C3 /* view models */,
+				F0FF77AA2330E6440041E8C3 /* HuntViewController.swift */,
+			);
+			path = hunt;
+			sourceTree = "<group>";
+		};
+		F0FF77B02330F12D0041E8C3 /* view models */ = {
+			isa = PBXGroup;
+			children = (
+				F0E3C5342330F37400E0F7BE /* HuntViewViewModel.swift */,
+			);
+			path = "view models";
+			sourceTree = "<group>";
+		};
+		F0FF77B12330F1500041E8C3 /* hunt */ = {
+			isa = PBXGroup;
+			children = (
+				F0E3C52F2330F1C100E0F7BE /* cells */,
+				F0FF77B22330F1630041E8C3 /* view models */,
+				F0FF77A32330DE460041E8C3 /* HuntCollectionView.swift */,
+			);
+			path = hunt;
+			sourceTree = "<group>";
+		};
+		F0FF77B22330F1630041E8C3 /* view models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF77B32330F16D0041E8C3 /* HuntCollectionViewModel.swift */,
+			);
+			path = "view models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +574,7 @@
 				F0505771232E49EB0062A1BC /* LaunchScreen.storyboard in Resources */,
 				F0505798232E61A80062A1BC /* Colors.xcassets in Resources */,
 				F050576E232E49EB0062A1BC /* Assets.xcassets in Resources */,
+				F0FF77AD2330E6900041E8C3 /* Hunt.storyboard in Resources */,
 				F0505769232E49E80062A1BC /* Main.storyboard in Resources */,
 				F0CABBFF232EFBF4002E704B /* Intro.storyboard in Resources */,
 			);
@@ -553,17 +629,25 @@
 				F0CABBF1232EEE52002E704B /* MainModel.swift in Sources */,
 				F0BC1076232F095700382455 /* ComicsCollectionViewController.swift in Sources */,
 				F0CABBEE232EEB72002E704B /* UIBezierPath+.swift in Sources */,
+				F0FF77A82330E53F0041E8C3 /* Notification.Name+.swift in Sources */,
+				F0E3C5312330F1D300E0F7BE /* UIHuntCollectionViewCell.swift in Sources */,
+				F0FF77B42330F16D0041E8C3 /* HuntCollectionViewModel.swift in Sources */,
+				F0FF77AF2330EF500041E8C3 /* ComicsCollectionModel.swift in Sources */,
+				F0FF77A42330DE460041E8C3 /* HuntCollectionView.swift in Sources */,
 				F0BC1088232F9C6E00382455 /* ComicsCollectionViewModel.swift in Sources */,
 				F000D0B0232FFFF9003E9CA8 /* ComicsViewController.swift in Sources */,
 				F000D0B323300C62003E9CA8 /* ComicsModel.swift in Sources */,
 				F0CABC03232EFF68002E704B /* UIViewController+.swift in Sources */,
 				F000D0CA2330D0AE003E9CA8 /* Credentials.swift in Sources */,
 				F000D0D22330D7C2003E9CA8 /* ImageFetcher.swift in Sources */,
+				F0FF77AB2330E6440041E8C3 /* HuntViewController.swift in Sources */,
+				F0E3C5352330F37400E0F7BE /* HuntViewViewModel.swift in Sources */,
 				F050576C232E49E80062A1BC /* MarvelHunt.xcdatamodeld in Sources */,
 				F000D0C423307B77003E9CA8 /* Collection+.swift in Sources */,
 				F0CABBE4232ED2C3002E704B /* UIColor+.swift in Sources */,
 				F0BC1080232F8E4500382455 /* UIComicsCollectionViewCell.swift in Sources */,
 				F0CABBFA232EF522002E704B /* Modelable.swift in Sources */,
+				F0E3C5332330F25F00E0F7BE /* HuntData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

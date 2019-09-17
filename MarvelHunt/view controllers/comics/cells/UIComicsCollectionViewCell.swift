@@ -41,11 +41,23 @@ class UIComicsCollectionViewCell: UICollectionViewCell, Identifable {
     return value
   }()
   
+  private let _huntCollectionView: HuntCollectionView = {
+    let value = HuntCollectionView(collectionViewLayout: .init())
+    value.translatesAutoresizingMaskIntoConstraints = false
+    return value
+  }()
+  
   func apply(data: ComicsData) {
     _titleLabel.text = data.variantDescription
     _titleLabel.sizeToFit()
     
     _subtitleLabel.text = data.title
+    
+    // dummy data
+    _huntCollectionView.setData([
+      .init(id: data.id, data: data, coordinate: .init(latitude: 41.3851, longitude: 2.1734)),
+      .init(id: data.id, data: data, coordinate: .init(latitude: 55.6761, longitude: 12.5683)),
+    ])
   }
   
   func apply(image: UIImage?) {
@@ -86,8 +98,9 @@ extension UIComicsCollectionViewCell {
     
     contentView.addSubview(_titleLabel)
     contentView.addSubview(_subtitleLabel)
+    contentView.addSubview(_huntCollectionView)
     
-    contentView.directionalLayoutMargins = .init(top: 12, leading: 12, bottom: 0, trailing: 12)
+    contentView.directionalLayoutMargins = .init(top: 12, leading: 12, bottom: 8, trailing: 12)
     let layoutMargins = contentView.layoutMarginsGuide
     
     NSLayoutConstraint.activate([
@@ -98,6 +111,11 @@ extension UIComicsCollectionViewCell {
       _subtitleLabel.topAnchor.constraint(equalTo: _titleLabel.bottomAnchor, constant: 4),
       _subtitleLabel.leftAnchor.constraint(equalTo: layoutMargins.leftAnchor),
       _subtitleLabel.rightAnchor.constraint(equalTo: layoutMargins.rightAnchor),
+      
+      _huntCollectionView.leftAnchor.constraint(equalTo: layoutMargins.leftAnchor),
+      _huntCollectionView.rightAnchor.constraint(equalTo: layoutMargins.rightAnchor),
+      _huntCollectionView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor),
+      _huntCollectionView.heightAnchor.constraint(equalToConstant: 40)
     ])
   }
 }

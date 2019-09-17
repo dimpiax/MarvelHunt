@@ -46,6 +46,8 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    NotificationCenter.default.addObserver(self, selector: #selector(willShowHuntLocation(_:)), name: .willShowHuntLocation, object: nil)
+    
     guard _viewModel.isFirstLoad else { return }
     
     _activityView.startAnimating()
@@ -61,6 +63,23 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
       
       self.collectionView.reloadData()
     }
+  }
+  
+  @objc private func willShowHuntLocation(_ notification: Notification) {
+    guard let data = notification.object as? HuntData else {
+      assertionFailure("data must be HuntLocation data-type")
+      return
+    }
+    
+    guard let vc = VCFactory.get(.hunt) as? HuntViewController else { return }
+    vc.data = data
+    present(vc, options: (.overFullScreen, .coverVertical))
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    NotificationCenter.default.removeObserver(self)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

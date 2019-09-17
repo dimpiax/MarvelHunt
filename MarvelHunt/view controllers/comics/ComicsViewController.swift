@@ -53,7 +53,14 @@ class ComicsViewController: UIViewController, Modelable {
   }
   
   @IBAction func didTapButton() {
-    print("TODO: register at current location the spot")
+    let controller = UIAlertController(
+      title: "You've hidden the magazine!",
+      message: "Be notified of founding your spot, and follow instructions.",
+      preferredStyle: .alert)
+    
+    controller.addAction(.init(title: "Ok", style: .default))
+    
+    present(controller)
   }
   
   @objc private func didTapActionButton(_ value: UIBarButtonItem) {

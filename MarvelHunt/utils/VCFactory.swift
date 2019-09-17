@@ -24,6 +24,9 @@ extension VCFactory {
       main = "MainViewController",
       mainNav = "MainNavigationViewController"
     
+    case
+      hunt = "HuntViewController"
+    
     var storyboardId: String {
       switch self {
       case .intro:
@@ -31,6 +34,9 @@ extension VCFactory {
         
       case .mainNav, .main:
         return "Main"
+        
+      case .hunt:
+        return "Hunt"
       }
     }
     
