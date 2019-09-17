@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 class ComicsCollectionViewModel {
-  unowned private var _mainModel: MainModel?
+  unowned private var _mainModel: MainModel
   
   private(set) var data: [ComicsData]?
   
   private var _tasks = [ComicsData.Id: URLSessionDataTask]()
-  private var _imagesData = [ComicsData.Id: UIImage]()
   
   var didCompleteLoadImage: ((IndexPath) -> Void)?
   
@@ -44,24 +43,22 @@ class ComicsCollectionViewModel {
     return data?[indexPath.row]
   }
   
-  func getImage(id: ComicsData.Id) -> UIImage? {
-    return _imagesData[id]
+  func getImage(url: URL) -> UIImage? {
+    return _mainModel.imageFetcher.getImage(url: url)
   }
   
   func loadImage(indexPath: IndexPath) {
     guard let data = getData(indexPath: indexPath) else { return }
     let id = data.id
     
-    guard _imagesData[id] == nil else { return }
-    
-    let task = URLSession.shared.dataTask(with: data.thumbnail) { data, response, error in
-      // TODO: refactor
+    let task = _mainModel.imageFetcher.requestImage(url: data.thumbnail) {[weak self] image in
+      guard let self = self else { return }
+      
       DispatchQueue.main.async {
-        self._imagesData[id] = data == nil ? nil : UIImage(data: data!)
         self.didCompleteLoadImage?(indexPath)
       }
     }
-    task.resume()
+    task?.resume()
     
     _tasks[id] = task
   }

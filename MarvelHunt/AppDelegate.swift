@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var model = MainModel()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.blue
+    URLCache.shared = URLCache(memoryCapacity: 100*1024*1024, diskCapacity: 100*1024*1024, diskPath: "images/")
     
     if let modelable = window?.rootViewController as? Modelable {
       modelable.mainModel = model

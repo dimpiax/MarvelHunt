@@ -37,7 +37,7 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
     switch (SegueIdentifier(value: segue), segue.destination, sender) {
     case (.comicsDetail, let vc as ComicsViewController, let data as ComicsData):
       vc.mainModel = mainModel
-      vc.model = ComicsModel(data: data, image: _viewModel.getImage(id: data.id))
+      vc.model = ComicsModel(data: data, image: _viewModel.getImage(url: data.thumbnail))
       
     default: break
     }
@@ -54,7 +54,7 @@ class ComicsCollectionViewController: UICollectionViewController, Modelable {
     else { return }
     
     cell.apply(data: data)
-    cell.apply(image: _viewModel.getImage(id: data.id))
+    cell.apply(image: _viewModel.getImage(url: data.thumbnail))
     _viewModel.loadImage(indexPath: indexPath)
   }
   

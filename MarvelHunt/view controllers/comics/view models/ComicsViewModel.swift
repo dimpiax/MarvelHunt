@@ -14,7 +14,9 @@ class ComicsViewModel {
   private let _model: ComicsModel
   private let _data: ComicsData
   
-  var image: UIImage? { return _model.image }
+  var image: UIImage? {
+    return _mainModel.imageFetcher.getImage(url: _data.thumbnail)
+  }
   var title: String { return _data.variantDescription }
   var subtitle: String { return _data.title }
   var desc: String { return _data.desc }
